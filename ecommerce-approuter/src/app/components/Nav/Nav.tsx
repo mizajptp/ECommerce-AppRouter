@@ -11,7 +11,7 @@ export default function Nav() {
 
         {/* Logo */}
         <Link className="navbar-brand" href="/">
-          <Image src={"/images/Logo01.png"} width={75} height={50} alt="logo" />
+          <Image src={"/images/Logo01.png"} width={75} height={50} alt="logo" priority />
         </Link>
 
         {/* Toggler */}

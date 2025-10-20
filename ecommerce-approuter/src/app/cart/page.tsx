@@ -49,7 +49,7 @@ export default function Cart() {
           {/* Cart Items */}
           <div className="list-group">
             {cart.map((item: CartItem) => (
-              <div className="list-group-item border-0 border-bottom p-3">
+              <div key={item.id} className="list-group-item border-0 border-bottom p-3">
                 <div className="row align-items-center ">
 
                   {/* Image */}

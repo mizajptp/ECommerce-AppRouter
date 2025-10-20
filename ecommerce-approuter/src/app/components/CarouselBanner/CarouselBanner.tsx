@@ -1,10 +1,15 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 export default function CarouselBanner() {
+
+  useEffect(() => {
+    // @ts-ignore
+    import("bootstrap/dist/js/bootstrap.bundle.min.js");
+  }, []);
+  
   return (
     <div id="demo" className="carousel slide" data-bs-ride="carousel">
       <div className="carousel-inner">

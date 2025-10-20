@@ -1,8 +1,8 @@
 export default function Loading() {
   return (
     <div className="row m-4 g-5 text-center">
-      {Array.from({ length: 8 }).map((i) => (
-        <div className="col-3">
+      {Array.from({ length: 8 }).map((i,index) => (
+        <div className="col-6 col-md-4 col-lg-3" key={index}>
           <div className="card" style={{ height: "400px" }}>
             {/* Image Skeleton */}
             <div
