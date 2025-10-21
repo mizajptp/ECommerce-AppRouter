@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { ProductsService } from "../services/products-service";
 import Link from "next/link";
 import ProductCard from "../components/ProductCard/ProductCard";
@@ -45,8 +45,10 @@ export default async function Products(props: any) {
             : `${filteredProducts.length} products found`}
         </p>
         <div className="d-flex gap-2">
+          <Suspense fallback={<div>Loading...</div>}>
           <CategoryFilter categories={categories} selected={categoryFilter} />
           <SortFilter selected={sortOrder} />
+          </Suspense>
         </div>
       </div>
 

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React from "react";
+import React, { Suspense } from "react";
 import Image from "next/image";
 import SearchBar from "../searchBar/SearchBar";
 import CartCount from "../CartCount/CartCount";
@@ -8,10 +8,15 @@ export default function Nav() {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-
         {/* Logo */}
         <Link className="navbar-brand" href="/">
-          <Image src={"/images/Logo01.png"} width={75} height={50} alt="logo" priority />
+          <Image
+            src={"/images/Logo01.png"}
+            width={75}
+            height={50}
+            alt="logo"
+            priority
+          />
         </Link>
 
         {/* Toggler */}
@@ -29,7 +34,6 @@ export default function Nav() {
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto">
-
             {/* Header Links */}
             <li className="nav-item">
               <Link className="nav-link" aria-current="page" href={"/"}>
@@ -47,15 +51,20 @@ export default function Nav() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" aria-current="page" href={"/contactus"}>
+              <Link
+                className="nav-link"
+                aria-current="page"
+                href={"/contactus"}
+              >
                 Contact Us
               </Link>
             </li>
-
             <CartCount />
           </ul>
 
-          <SearchBar />
+          <Suspense fallback={<div>Loading...</div>}>
+            <SearchBar />
+          </Suspense>
         </div>
       </div>
     </nav>
