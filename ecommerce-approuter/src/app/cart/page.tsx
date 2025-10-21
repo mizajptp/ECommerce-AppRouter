@@ -36,7 +36,7 @@ export default function Cart() {
       ) : (
         <>
           <div className="d-flex justify-content-between align-items-center">
-            <h5 className="">Your Cart</h5>
+            <h5>Your Cart</h5>
             <button
               className="btn btn-sm btn-outline-danger d-flex align-items-center px-3 py-2"
               onClick={() => OnClearClick()}
@@ -87,7 +87,7 @@ export default function Cart() {
                       </button>
                     </div>
                     <div className="fw-bold">
-                      ${item.price * item.quantity}
+                      ${(item.price * item.quantity).toFixed(2)}
                     </div>
                     <button
                       className="btn btn-outline-danger btn-sm rounded-1"

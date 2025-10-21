@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "M-Cart",
-  description: "Developed by Mizaj",
+  description: "E-Commerce App using NextJS App Router",
 };
 
 export default function RootLayout({

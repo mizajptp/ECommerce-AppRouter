@@ -1,22 +1,26 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import React, { useState } from "react";
 
 export default function SearchBar() {
   const router = useRouter();
-
+  const searchParams = useSearchParams();
   const [searchTerm, setSearchTerm] = useState("");
 
   const onSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    router.push(`/products?search=${searchTerm}`);
-    setSearchTerm("");
+    const params = new URLSearchParams(searchParams.toString());
+
+    if (searchTerm) params.set("search", searchTerm);
+    else params.delete("search");
+
+    router.push(`/products?${params.toString()}`);
   };
+
   return (
     <div>
       <form className="d-flex" role="search" onSubmit={onSearchSubmit}>
-
         {/* TextBox */}
         <input
           className="form-control me-2"
@@ -24,9 +28,8 @@ export default function SearchBar() {
           onChange={(e) => setSearchTerm(e.target.value)}
           type="search"
           placeholder="Search"
-          aria-label="Search"
         />
-        
+
         {/* Search Button */}
         <button className="btn btn-outline-success" type="submit">
           Search
