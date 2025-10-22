@@ -9,7 +9,7 @@ export default function ProductCard(props: any) {
 
       {/* Image */}
       <div className="py-3">
-        <img src={prod.image} height={240} width={180} style={{objectFit:"contain"}}/>
+        <img src={prod.image} alt={prod.title} className="img-fluid" style={{maxHeight: "240px" ,objectFit:"contain"}}/>
       </div>
 
       <div className="card-body">
