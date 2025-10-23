@@ -5,11 +5,11 @@ import AddToCartButton from "../AddToCartButton/AddToCartButton";
 export default function ProductCard(props: any) {
   var prod = props.product;
   return (
-    <div className="card h-100">
+    <div className="card">
 
       {/* Image */}
-      <div className="py-3">
-        <img src={prod.image} alt={prod.title} className="img-fluid" style={{maxHeight: "240px" ,objectFit:"contain"}}/>
+      <div className="p-3" style={{ height: "240px" }}>
+        <img src={prod.image} alt={prod.title} className="img-fluid h-100" style={{objectFit:"contain"}}/>
       </div>
 
       <div className="card-body">
@@ -20,7 +20,7 @@ export default function ProductCard(props: any) {
           style={{ maxWidth: "100%", display: "block" }}
         >
           <Link
-            className="text-decoration-underline"
+            className="text-decoration-underline text-dark"
             href={`/products/${prod.id}`}
           >
             {prod.title}
