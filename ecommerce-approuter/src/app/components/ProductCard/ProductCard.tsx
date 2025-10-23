@@ -8,7 +8,7 @@ export default function ProductCard(props: any) {
     <div className="card">
 
       {/* Image */}
-      <div className="p-3" style={{ height: "240px" }}>
+      <div className="mt-2 mx-2" style={{ height: "210px" }}>
         <img src={prod.image} alt={prod.title} className="img-fluid h-100" style={{objectFit:"contain"}}/>
       </div>
 
@@ -16,7 +16,7 @@ export default function ProductCard(props: any) {
 
         {/* Title */}
         <div
-          className="text-truncate my-2"
+          className="text-truncate mb-2"
           style={{ maxWidth: "100%", display: "block" }}
         >
           <Link
