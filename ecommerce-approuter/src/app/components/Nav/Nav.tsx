@@ -6,7 +6,7 @@ import CartCount from "../CartCount/CartCount";
 
 export default function Nav() {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
       <div className="container-fluid">
         {/* Logo */}
         <Link className="navbar-brand" href="/">
