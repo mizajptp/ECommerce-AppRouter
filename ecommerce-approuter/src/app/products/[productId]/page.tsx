@@ -30,7 +30,7 @@ export default async function ProductDetail(props: any) {
 
   return (
     <div className="container py-5">
-      <div className="row  gy-4">
+      <div className="row gy-4">
         
         {/* Image */}
         <div className="col-12 col-md-6 text-center">
